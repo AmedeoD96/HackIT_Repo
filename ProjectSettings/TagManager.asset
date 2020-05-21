@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Monetine
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Ground
   - 
   - 
   - 
@@ -40,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 697684661
+    locked: 0
+  - name: BackgroundElement
+    uniqueID: 1483872133
+    locked: 0
+  - name: Foreground
+    uniqueID: 1892812465
+    locked: 0
+  - name: Entity
+    uniqueID: 780766517
     locked: 0
