@@ -382,6 +382,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3572069754612977318, guid: 4f674452acad03b41a82d646c7f2f065,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572069754612977318, guid: 4f674452acad03b41a82d646c7f2f065,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.67058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572069754612977318, guid: 4f674452acad03b41a82d646c7f2f065,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.24705884
+      objectReference: {fileID: 0}
     - target: {fileID: 3572069754612977319, guid: 4f674452acad03b41a82d646c7f2f065,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -599,7 +614,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 864247889}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 680374530}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &864247889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1022,7 +1048,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1376148915}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 680374530}
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1376148915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1485,8 +1522,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16, y: 90}
-  m_SizeDelta: {x: 440.62262, y: 56.19635}
+  m_AnchoredPosition: {x: 11.15, y: 90}
+  m_SizeDelta: {x: 439.8761, y: 56.19635}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1680441211
 MonoBehaviour:
@@ -1530,7 +1567,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1680441212}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 680374530}
+        m_MethodName: LoadPrincipalMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1680441212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1599,6 +1647,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1904141045
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7296655630680181421, guid: 35c5a3d5e7764d846abe553af82b5c9c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 564.0884
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296655630680181421, guid: 35c5a3d5e7764d846abe553af82b5c9c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 404.40564
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296655630680181421, guid: 35c5a3d5e7764d846abe553af82b5c9c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19.906118
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296655630680181421, guid: 35c5a3d5e7764d846abe553af82b5c9c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296655630680181421, guid: 35c5a3d5e7764d846abe553af82b5c9c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296655630680181421, guid: 35c5a3d5e7764d846abe553af82b5c9c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296655630680181421, guid: 35c5a3d5e7764d846abe553af82b5c9c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296655630680181421, guid: 35c5a3d5e7764d846abe553af82b5c9c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296655630680181421, guid: 35c5a3d5e7764d846abe553af82b5c9c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296655630680181421, guid: 35c5a3d5e7764d846abe553af82b5c9c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296655630680181421, guid: 35c5a3d5e7764d846abe553af82b5c9c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296655630680181423, guid: 35c5a3d5e7764d846abe553af82b5c9c,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioSource
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 35c5a3d5e7764d846abe553af82b5c9c, type: 3}
 --- !u!4 &1928894382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3572069754736194766, guid: 4f674452acad03b41a82d646c7f2f065,
@@ -1639,8 +1756,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.5, y: 0}
-  m_SizeDelta: {x: 43, y: 0}
+  m_AnchoredPosition: {x: -0.000015258789, y: 0}
+  m_SizeDelta: {x: -0.000030517578, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2075207066
 MonoBehaviour:
