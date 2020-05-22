@@ -14,6 +14,8 @@ public class Nemici : MonoBehaviour {
     public void JumpedOn() {
         anim.SetTrigger("Death");
         rb.velocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        GetComponent<Collider2D>().enabled = false;
     }
     
     private void Death() {
