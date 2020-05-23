@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Player : MonoBehaviour {
     Rigidbody2D rb;
@@ -26,12 +27,12 @@ public class Player : MonoBehaviour {
     [SerializeField] private float speed = 7f;
     [SerializeField] private float jumpForce = 15f;
     [SerializeField] private int monetine = 0;
-    [SerializeField] private Text monetineText;
+    [SerializeField] private TextMeshProUGUI monetineText;
     [SerializeField] private float hurtForce = 10f;
     [SerializeField] private int health;
-    [SerializeField] private Text healthAmount;
+    [SerializeField] private TextMeshProUGUI healthAmount;
     [SerializeField] private int indizi = 0;
-    [SerializeField] private Text indiziText;
+    [SerializeField] private TextMeshProUGUI indiziText;
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
