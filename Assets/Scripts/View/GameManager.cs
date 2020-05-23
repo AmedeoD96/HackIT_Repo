@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     void checkKeyboard()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKey)
         {
             if (wrongText.activeSelf == true)
             {
