@@ -38,13 +38,18 @@ public class Player : MonoBehaviour {
     }
 
     private void Update() {
-        if (state != State.hurt){
-            Movement();
+        if (Time.deltaTime != 0)
+        {
+
+            if (state != State.hurt)
+            {
+                Movement();
+            }
+
+            AnimationState();
+
+            anim.SetInteger("state", (int)state); //Imposto l'animazione grazie all'enum
         }
-        
-        AnimationState();
-        
-        anim.SetInteger("state", (int) state); //Imposto l'animazione grazie all'enum
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
