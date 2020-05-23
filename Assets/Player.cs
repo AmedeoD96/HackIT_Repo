@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.Compression;
 using Platformer.Mechanics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -29,17 +30,19 @@ public class Player : MonoBehaviour {
     [SerializeField] private float hurtForce = 10f;
     [SerializeField] private int health;
     [SerializeField] private Text healthAmount;
+    [SerializeField] private int indizi = 0;
+    [SerializeField] private Text indiziText;
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
         healthAmount.text = health.ToString();
+        indiziText.text = indizi.ToString();
     }
 
     private void Update() {
-        if (Time.deltaTime != 0)
-        {
+        if (Time.deltaTime != 0) {
 
             if (state != State.hurt)
             {
@@ -57,6 +60,12 @@ public class Player : MonoBehaviour {
             Destroy(collision.gameObject);
             monetine++;
             monetineText.text = monetine.ToString();
+        }
+
+        if (collision.tag == "Indizi"){
+            Destroy(collision.gameObject);
+            indizi++;
+            indiziText.text = indizi.ToString();
         }
     }
 
