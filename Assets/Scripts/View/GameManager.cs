@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject cen;
 
+    public Transform canvas;
+
     private string wordToGuess = "";
 
     private int lengthOfWordToGuess;
@@ -66,7 +68,7 @@ public class GameManager : MonoBehaviour
             newPosition = new Vector3(cen.transform.position.x + ((i - lengthOfWordToGuess / 2.0f) * 100), cen.transform.position.y, cen.transform.position.z);
             GameObject l = (GameObject)Instantiate(letter, newPosition, Quaternion.identity);
             l.name = "letter" + (i + 1);
-            l.transform.SetParent(GameObject.Find("Canvas").transform);
+            l.transform.SetParent(canvas);
         }
     }
 
