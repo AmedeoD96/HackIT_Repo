@@ -28,11 +28,11 @@ public class GameManager : MonoBehaviour
     int i = 0;
 
     String result;
-    
-    public Color whateverColor = new Color(0,0,0,255);
-    public MeshRenderer gameObjectRenderer;
-    public Material newMaterial;
 
+    //public bool [] allWordsSelected;
+
+    //public int k = 0;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -71,13 +71,16 @@ public class GameManager : MonoBehaviour
             newPosition = new Vector3(cen.transform.position.x + ((i - lengthOfWordToGuess / 2.0f) * 100), cen.transform.position.y, cen.transform.position.z);
             GameObject l = (GameObject)Instantiate(letter, newPosition, Quaternion.identity);
             l.name = "letter" + (i + 1);
-            l.transform.SetParent(canvas); 
+            l.transform.SetParent(canvas);
+
+            //allWordsSelected[i] = false;
         }
     } 
 
 
     void checkKeyboard()
     {
+        GameObject.Find("letter" + (i + 1)).GetComponent<Text>().color = Color.yellow;
         if (Input.anyKey)
         {
 
@@ -92,36 +95,49 @@ public class GameManager : MonoBehaviour
                 if (i < lengthOfWordToGuess) {
 
                     letterPressed = System.Char.ToUpper(letterPressed);
-                    var Renderer = GameObject.Find("letter" + (i+1)).GetComponent<Renderer>();
-                    Renderer.material.SetColor("_Color", Color.green);
-                    //GameObject.Find("letter" + (i + 1)).renderer.material.color = Color.Blue;
-                    
+
                     GameObject.Find("letter" + (i+1)).GetComponent<Text>().text = letterPressed.ToString();
+                    GameObject.Find("letter" + (i+1)).GetComponent<Text>().color = Color.white;
+                    //allWordsSelected[i] = true;
                     i++;
-                    
-                    //MeshRenderer gameObjectRenderer = GameObject.Find("letter" + (i)).GetComponent<MeshRenderer>();
-                    //Material newMaterial = new Material(Shader.Find("Distance Field"));
-                    //newMaterial.color = whateverColor;
-                    //gameObjectRenderer.material = newMaterial ;
 
                     result = result + letterPressed.ToString();
                 } 
-                if (i == lengthOfWordToGuess)  {
-                    
-                    bool risultato = String.Equals(result, wordToGuess);
-                    if (risultato == true)  {
-                        correctText.SetActive(true);
+                //if (i == lengthOfWordToGuess)  {
+
+                    //for (int j = 0; j < lengthOfWordToGuess; j++)
+                    //{
+                     //   k = 0;
+                      //  if (allWordsSelected[j] == true)
+                       // {
+                       //     k++;
+                       // }
+                    //}
+
+                    if (i == lengthOfWordToGuess) //poi va k
+                    {
+                        bool risultato = String.Equals(result, wordToGuess);
+                        if (risultato == true)  {
+                            correctText.SetActive(true);
+                        }
+                        else  {
+                            wrongText.SetActive(true);
+                        }
                     }
-                    else  {
-                        wrongText.SetActive(true);
-                    }
-                }
+
+                //}
                 
             } else if(letterPressedAsInt == 32)  {
+                GameObject.Find("letter" + (i+1)).GetComponent<Text>().color = Color.white;
                 i++;
                 if(i >= lengthOfWordToGuess) {
                     i = i - lengthOfWordToGuess; 
                 }
+            } else if (letterPressedAsInt == 8)
+            {
+                GameObject.Find("letter" + (i+1)).GetComponent<Text>().color = Color.white;
+                i--;
+                result = result.Remove(result.Length - 1);
             }
         }
     }
