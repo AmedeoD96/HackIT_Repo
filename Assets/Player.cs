@@ -33,6 +33,11 @@ public class Player : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI healthAmount;
     [SerializeField] private int indizi = 0;
     [SerializeField] private TextMeshProUGUI indiziText;
+    [SerializeField] private AudioSource passi;
+    [SerializeField] private AudioSource monetinaSound;
+    [SerializeField] private AudioSource saltoSound;
+    [SerializeField] private AudioSource colpitoSound;
+    [SerializeField] private AudioSource indizioSound;
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -58,12 +63,14 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "Monetine"){
+            monetinaSound.Play();
             Destroy(collision.gameObject);
             monetine++;
             monetineText.text = monetine.ToString();
         }
 
         if (collision.tag == "Indizi"){
+            indizioSound.Play();
             Destroy(collision.gameObject);
             indizi++;
             indiziText.text = indizi.ToString();
@@ -75,10 +82,12 @@ public class Player : MonoBehaviour {
             Nemici enemy = other.gameObject.GetComponent<Nemici>();
             if (state == State.falling){
                 enemy.JumpedOn();
+                saltoSound.Play();
                 Jump();
             }
             else{
                 state = State.hurt;
+                colpitoSound.Play();
                 HandleHealth();
                 if (other.gameObject.transform.position.x > transform.position.x){
                     //Nemico alla mia destra. Mi sposta a sinistra
@@ -122,6 +131,7 @@ public class Player : MonoBehaviour {
     }
 
     private void Jump() {
+        saltoSound.Play();
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         state = State.jumping;
     }
@@ -149,5 +159,9 @@ public class Player : MonoBehaviour {
             state = State.idle;
         }
         
+    }
+
+    private void Passi() {
+       passi.Play(); 
     }
 }
