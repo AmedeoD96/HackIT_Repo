@@ -25,12 +25,13 @@ public class GameManager : MonoBehaviour
 
     bool[] lettersGuessed;
 
-    int i = 1;
+    int i = 0;
 
     String result;
-
-    //public Color altColor = Color.black;
-    //public Renderer rend = GetComponent<Renderer>();
+    
+    public Color whateverColor = new Color(0,0,0,255);
+    public MeshRenderer gameObjectRenderer;
+    public Material newMaterial;
 
 
     // Start is called before the first frame update
@@ -39,8 +40,6 @@ public class GameManager : MonoBehaviour
         correctText = GameObject.Find("Correct");
         wrongText = GameObject.Find("Wrong");
         cen = GameObject.Find("CenterOfTheScreen");
-
-        //rend.material.color = altColor;
 
         initGame();
         initLetters();
@@ -52,9 +51,7 @@ public class GameManager : MonoBehaviour
         checkKeyboard();
     }
 
-    void initGame()
-
-    {
+    void initGame() {
         correctText.SetActive(false);
         wrongText.SetActive(false);
 
@@ -66,18 +63,17 @@ public class GameManager : MonoBehaviour
         lettersToGuess = wordToGuess.ToCharArray();
     }
 
-    void initLetters()
+    void initLetters() 
     {
-        //int nbletters = lengthOfWordToGuess;
-        for (int i = 0; i < lengthOfWordToGuess; i++)
+        for (int i = 0; i < lengthOfWordToGuess; i++) 
         {
             Vector3 newPosition;
             newPosition = new Vector3(cen.transform.position.x + ((i - lengthOfWordToGuess / 2.0f) * 100), cen.transform.position.y, cen.transform.position.z);
             GameObject l = (GameObject)Instantiate(letter, newPosition, Quaternion.identity);
             l.name = "letter" + (i + 1);
-            l.transform.SetParent(canvas);
-}
-    }
+            l.transform.SetParent(canvas); 
+        }
+    } 
 
 
     void checkKeyboard()
@@ -91,42 +87,41 @@ public class GameManager : MonoBehaviour
             }
             char letterPressed = Input.inputString.ToCharArray(0,1)[0];
             int letterPressedAsInt = System.Convert.ToInt32(letterPressed);
-            //altColor.r = 255f;
-            //altColor.g = 255f;
-            //altColor.b = 255f;
-            //GameObject.Renderer.Material.Color = altcolor;
-            if (letterPressedAsInt >= 97 && letterPressed <= 122)
-            {
-                if (i == lengthOfWordToGuess)
-                {
+            
+            if (letterPressedAsInt >= 97 && letterPressed <= 122)  {
+                if (i < lengthOfWordToGuess) {
+
+                    letterPressed = System.Char.ToUpper(letterPressed);
+                    var Renderer = GameObject.Find("letter" + (i+1)).GetComponent<Renderer>();
+                    Renderer.material.SetColor("_Color", Color.green);
+                    //GameObject.Find("letter" + (i + 1)).renderer.material.color = Color.Blue;
+                    
+                    GameObject.Find("letter" + (i+1)).GetComponent<Text>().text = letterPressed.ToString();
+                    i++;
+                    
+                    //MeshRenderer gameObjectRenderer = GameObject.Find("letter" + (i)).GetComponent<MeshRenderer>();
+                    //Material newMaterial = new Material(Shader.Find("Distance Field"));
+                    //newMaterial.color = whateverColor;
+                    //gameObjectRenderer.material = newMaterial ;
+
+                    result = result + letterPressed.ToString();
+                } 
+                if (i == lengthOfWordToGuess)  {
+                    
                     bool risultato = String.Equals(result, wordToGuess);
-                    if (risultato == true)
-                    {
+                    if (risultato == true)  {
                         correctText.SetActive(true);
                     }
-                    else
-                    {
+                    else  {
                         wrongText.SetActive(true);
                     }
                 }
-                if (i < lengthOfWordToGuess)
-                {
-                    letterPressed = System.Char.ToUpper(letterPressed);
-                    GameObject.Find("letter" + (i)).GetComponent<Text>().text = letterPressed.ToString();
-                    i++;
-                    //gameObject.Renderer.Material.Color = Color.green;
-
-
-                    result = result + letterPressed.ToString();
-                }
-            } else if(letterPressedAsInt == 32)
-            {
+                
+            } else if(letterPressedAsInt == 32)  {
                 i++;
-                if(i >= lengthOfWordToGuess)
-                {
+                if(i >= lengthOfWordToGuess) {
                     i = i - lengthOfWordToGuess; 
                 }
-                
             }
         }
     }
