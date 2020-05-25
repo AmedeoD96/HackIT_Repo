@@ -31,7 +31,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private float hurtForce = 10f;
     [SerializeField] private int health;
     [SerializeField] private TextMeshProUGUI healthAmount;
-    [SerializeField] private int indizi = 0;
+    [SerializeField] public int indizi = 0;
     [SerializeField] private TextMeshProUGUI indiziText;
     [SerializeField] private AudioSource passi;
     [SerializeField] private AudioSource monetinaSound;
