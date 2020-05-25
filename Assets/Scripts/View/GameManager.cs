@@ -27,9 +27,10 @@ public class GameManager : MonoBehaviour
 
     int i = 0;
 
-    String result;
+    String[] result;
 
     //public bool [] allWordsSelected;
+    String parola;
 
     public int k = 0;
     
@@ -106,7 +107,7 @@ public class GameManager : MonoBehaviour
                         i = i - lengthOfWordToGuess;
                     }
 
-                    result = result + letterPressed.ToString();
+                    result[i] = letterPressed.ToString();
                 } 
                 //if (i == lengthOfWordToGuess)  {
 
@@ -121,7 +122,12 @@ public class GameManager : MonoBehaviour
 
                     if (k == lengthOfWordToGuess) //poi va k
                     {
-                        bool risultato = String.Equals(result, wordToGuess);
+                        //correctText.SetActive(true);
+                        for (i = 0; i < lengthOfWordToGuess; i++)
+                        {
+                            parola = parola + result[i];
+                        }
+                        bool risultato = String.Equals(parola, wordToGuess);
                         if (risultato == true)  {
                             correctText.SetActive(true);
                         }
@@ -144,7 +150,7 @@ public class GameManager : MonoBehaviour
                 {
                     GameObject.Find("letter" + (i+1)).GetComponent<Text>().color = Color.white;
                     i--;
-                    result = result.Remove(result.Length - 1);   
+                    //result = result.Remove(result.Length - 1);   
                 }
             }
         }
