@@ -5,8 +5,6 @@ using System.IO.Compression;
 using Platformer.Mechanics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Player : MonoBehaviour {
@@ -62,14 +60,14 @@ public class Player : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag == "Monetine"){
+        if (collision.CompareTag("Monetine")){
             monetinaSound.Play();
             Destroy(collision.gameObject);
             monetine++;
             monetineText.text = monetine.ToString();
         }
 
-        if (collision.tag == "Indizi"){
+        if (collision.CompareTag("Indizi")){
             indizioSound.Play();
             Destroy(collision.gameObject);
             indizi++;
@@ -78,7 +76,7 @@ public class Player : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Enemy"){
+        if (other.gameObject.CompareTag("Enemy")){
             Nemici enemy = other.gameObject.GetComponent<Nemici>();
             if (state == State.falling){
                 enemy.JumpedOn();
