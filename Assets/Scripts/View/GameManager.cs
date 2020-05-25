@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     //public bool [] allWordsSelected;
 
-    //public int k = 0;
+    public int k = 0;
     
 
     // Start is called before the first frame update
@@ -100,6 +100,11 @@ public class GameManager : MonoBehaviour
                     GameObject.Find("letter" + (i+1)).GetComponent<Text>().color = Color.white;
                     //allWordsSelected[i] = true;
                     i++;
+                    k++;
+                    if (k != lengthOfWordToGuess && i== lengthOfWordToGuess)
+                    {
+                        i = i - lengthOfWordToGuess;
+                    }
 
                     result = result + letterPressed.ToString();
                 } 
@@ -114,7 +119,7 @@ public class GameManager : MonoBehaviour
                        // }
                     //}
 
-                    if (i == lengthOfWordToGuess) //poi va k
+                    if (k == lengthOfWordToGuess) //poi va k
                     {
                         bool risultato = String.Equals(result, wordToGuess);
                         if (risultato == true)  {
@@ -135,9 +140,12 @@ public class GameManager : MonoBehaviour
                 }
             } else if (letterPressedAsInt == 8)
             {
-                GameObject.Find("letter" + (i+1)).GetComponent<Text>().color = Color.white;
-                i--;
-                result = result.Remove(result.Length - 1);
+                if (i != 0)
+                {
+                    GameObject.Find("letter" + (i+1)).GetComponent<Text>().color = Color.white;
+                    i--;
+                    result = result.Remove(result.Length - 1);   
+                }
             }
         }
     }
