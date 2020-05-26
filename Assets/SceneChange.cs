@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour {
     [SerializeField] private string sceneName;
     [SerializeField] private Canvas message;
+    [SerializeField] private int indizi;
     private Player playerScript;
     private GameObject player;
 
@@ -16,7 +17,7 @@ public class SceneChange : MonoBehaviour {
         message.enabled = false;
     }
     private void OnTriggerEnter2D(Collider2D other) {
-        if (playerScript.indizi != 2){
+        if (playerScript.indizi != indizi){
             message.enabled = true;
         }else if (other.gameObject.tag == "Player"){
             SceneManager.LoadScene(sceneName);
