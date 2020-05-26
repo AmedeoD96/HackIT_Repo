@@ -587,15 +587,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5080869779350419141, guid: 4091d26b994b6414cab06dc53284e1e9,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1892812465
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080869779350419141, guid: 4091d26b994b6414cab06dc53284e1e9,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7518335923270889856, guid: 4091d26b994b6414cab06dc53284e1e9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.585335
+      value: -16.01
       objectReference: {fileID: 0}
     - target: {fileID: 7518335923270889856, guid: 4091d26b994b6414cab06dc53284e1e9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.4611173
+      value: 3.15
       objectReference: {fileID: 0}
     - target: {fileID: 7518335923270889856, guid: 4091d26b994b6414cab06dc53284e1e9,
         type: 3}
@@ -663,7 +673,6 @@ GameObject:
   - component: {fileID: 280600988}
   - component: {fileID: 280600992}
   - component: {fileID: 280600994}
-  - component: {fileID: 280600993}
   m_Layer: 0
   m_Name: flagRed_up
   m_TagString: Untagged
@@ -795,18 +804,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &280600993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 280600987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a1f06c728bfd4c40b0b99a875aaa30f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &280600994
 CircleCollider2D:
   m_ObjectHideFlags: 0
