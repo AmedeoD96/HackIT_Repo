@@ -40,14 +40,26 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string SceneName = "WordGame";
 
     private bool risultato;
-    
+    private GameObject playerImg;
+    private GameObject baloonImg;
+    private Animator anim;
+    private Animator baloonAnim;
 
+    private GameObject spiegazione;
     // Start is called before the first frame update
     void Start()
     {
         correctText = GameObject.Find("Correct");
         wrongText = GameObject.Find("Wrong");
         cen = GameObject.Find("CenterOfTheScreen");
+        playerImg = GameObject.Find("Player");
+        baloonImg = GameObject.Find("Baloon");
+        spiegazione = GameObject.Find("Spiegazione");
+        anim = playerImg.GetComponent<Animator>();
+        baloonAnim = baloonImg.GetComponent<Animator>();
+        playerImg.SetActive(false);
+        baloonImg.SetActive(false);
+        spiegazione.SetActive(false);
 
         initGame();
         initLetters();
@@ -168,6 +180,11 @@ public class GameManager : MonoBehaviour
                         risultato = String.Equals(parola, wordToGuess);
                         if (risultato == true)  {
                             correctText.SetActive(true);
+                            playerImg.SetActive(true);
+                            anim.Play("PlayerReveal");
+                            baloonAnim.Play("BaloonReveal");
+                            baloonImg.SetActive(true);
+                            spiegazione.SetActive(true);
                         }
                         else  {
                             wrongText.SetActive(true);
