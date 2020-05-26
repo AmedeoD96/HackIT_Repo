@@ -31,13 +31,15 @@ public class GameManager : MonoBehaviour
     String result = "";
 
     //public bool [] allWordsSelected;
-    String parola;
+    public String parola;
 
     int k = 0;
     
     readonly SortedList<int,char> dizionario = new SortedList<int, char>();
 
     [SerializeField] private string SceneName = "WordGame";
+
+    private bool risultato;
     
 
     // Start is called before the first frame update
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         checkKeyboard();
+       
     }
 
     void initGame() {
@@ -162,7 +165,7 @@ public class GameManager : MonoBehaviour
                         }
                         //parola = result;
                         //Debug.Log(parola);
-                        bool risultato = String.Equals(parola, wordToGuess);
+                        risultato = String.Equals(parola, wordToGuess);
                         if (risultato == true)  {
                             correctText.SetActive(true);
                         }
@@ -189,5 +192,21 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void retry()
+    {
+        for (int i = 0; i < lengthOfWordToGuess; i++)
+        {
+            Destroy( GameObject.Find("letter" + (i+1)));
+        }
+
+        i = 0;
+        k = 0;
+        initGame();
+        initLetters();
+        dizionario.Clear();
+        parola = "";
+        risultato = false;
     }
 }
