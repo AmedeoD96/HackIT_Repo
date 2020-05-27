@@ -619,6 +619,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4768227523715990023, guid: b1a92f2f2812b3b47849fa8856408ff9,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1892812465
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768227523715990023, guid: b1a92f2f2812b3b47849fa8856408ff9,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4997657270675356893, guid: b1a92f2f2812b3b47849fa8856408ff9,
         type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[3].Array.size
