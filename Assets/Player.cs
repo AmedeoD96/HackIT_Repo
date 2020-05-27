@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private LayerMask ground;
     [SerializeField] private float speed = 7f;
     [SerializeField] private float jumpForce = 15f;
-    [SerializeField] private int monetine = 0;
+    [SerializeField] public int monetine = 0;
     [SerializeField] private TextMeshProUGUI monetineText;
     [SerializeField] private float hurtForce = 10f;
     [SerializeField] private int health;
@@ -43,6 +43,16 @@ public class Player : MonoBehaviour {
         coll = GetComponent<Collider2D>();
         healthAmount.text = health.ToString();
         indiziText.text = indizi.ToString();
+        if (Application.loadedLevelName == "PrimoLivello"){
+            monetine = 0;
+            PlayerPrefs.SetInt("monetine", monetine);
+            monetineText.text = monetine.ToString();
+        }
+        else{
+            monetine = PlayerPrefs.GetInt("monetine");
+            monetineText.text = monetine.ToString();
+        }
+        
     }
 
     private void Update() {

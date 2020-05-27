@@ -20,6 +20,7 @@ public class SceneChange : MonoBehaviour {
         if (playerScript.indizi != indizi){
             message.enabled = true;
         }else if (other.gameObject.tag == "Player"){
+            PlayerPrefs.SetInt("monetine", playerScript.monetine);
             SceneManager.LoadScene(sceneName);
 
         }
