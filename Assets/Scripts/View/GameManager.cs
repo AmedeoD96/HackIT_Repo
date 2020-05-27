@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
     private Animator baloonAnim;
 
     private GameObject spiegazione;
+
+    private GameObject btnAvanti;
+    [SerializeField] private string newLevel;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +65,9 @@ public class GameManager : MonoBehaviour
         playerImg.SetActive(false);
         baloonImg.SetActive(false);
         spiegazione.SetActive(false);
+        btnAvanti = GameObject.Find("Passa al livello successivo");
+        btnAvanti.SetActive(false);
+        
 
         initGame();
         initLetters();
@@ -126,12 +134,12 @@ public class GameManager : MonoBehaviour
             var letters = InputString.ToCharArray(0, 1);
             
             char letterPressed = letters[0];
-            int letterPressedAsInt = System.Convert.ToInt32(letterPressed);
+            int letterPressedAsInt = Convert.ToInt32(letterPressed);
             
             if (letterPressedAsInt >= 97 && letterPressed <= 122)  {
                 if (i < lengthOfWordToGuess) {
 
-                    letterPressed = System.Char.ToUpper(letterPressed);
+                    letterPressed = Char.ToUpper(letterPressed);
 
                     GameObject.Find("letter" + (i+1)).GetComponent<TextMeshProUGUI>().text = letterPressed.ToString();
                     GameObject.Find("letter" + (i+1)).GetComponent<TextMeshProUGUI>().color = Color.white;
@@ -185,6 +193,8 @@ public class GameManager : MonoBehaviour
                             baloonAnim.Play("BaloonReveal");
                             baloonImg.SetActive(true);
                             spiegazione.SetActive(true);
+                            
+                            btnAvanti.SetActive(true);
                         }
                         else  {
                             wrongText.SetActive(true);
@@ -226,4 +236,10 @@ public class GameManager : MonoBehaviour
         parola = "";
         risultato = false;
     }
+
+    public void NextLevel() {
+        SceneManager.LoadScene(newLevel);
+    }
+    
+    
 }
