@@ -615,6 +615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 
   message: {fileID: 165281062}
+  indizi: 0
 --- !u!61 &280600989
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2978,6 +2979,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 416089676, guid: bfb44ca868c206f44a8ffbd04c25c61f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: d91accfb41f4a11419184a02e492a281,
+        type: 2}
     - target: {fileID: 2521525467217554561, guid: bfb44ca868c206f44a8ffbd04c25c61f,
         type: 3}
       propertyPath: m_Name
