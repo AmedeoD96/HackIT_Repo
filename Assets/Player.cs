@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.Compression;
+using System.Security.Cryptography;
 using Platformer.Mechanics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
     Rigidbody2D rb;
@@ -16,7 +18,7 @@ public class Player : MonoBehaviour {
         running,
         jumping,
         falling,
-        hurt
+        hurt,
     }
 
     private State state = State.idle;
@@ -36,8 +38,11 @@ public class Player : MonoBehaviour {
     [SerializeField] private AudioSource saltoSound;
     [SerializeField] private AudioSource colpitoSound;
     [SerializeField] private AudioSource indizioSound;
-    public GameObject informazioni_sensibili;
-    public Transform playerPosition;
+    private TextMeshProUGUI testoIndizio;
+    private bool fadeIn = false;
+    private bool fadeOut = false;
+    private float fadeSpeed = 0.1f;
+    private Color color;
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -45,6 +50,11 @@ public class Player : MonoBehaviour {
         coll = GetComponent<Collider2D>();
         healthAmount.text = health.ToString();
         indiziText.text = indizi.ToString();
+
+        testoIndizio = GameObject.FindWithTag("Player").GetComponentInChildren<TextMeshProUGUI>();
+        testoIndizio.enabled = false;
+
+
         if (Application.loadedLevelName == "PrimoLivello"){
             monetine = 0;
             PlayerPrefs.SetInt("monetine", monetine);
@@ -54,7 +64,9 @@ public class Player : MonoBehaviour {
             monetine = PlayerPrefs.GetInt("monetine");
             monetineText.text = monetine.ToString();
         }
+
         
+
     }
 
     private void Update() {
@@ -81,12 +93,19 @@ public class Player : MonoBehaviour {
 
         if (collision.CompareTag("Indizi")){
             indizioSound.Play();
-            Destroy(collision.gameObject);
             indizi++;
             indiziText.text = indizi.ToString();
-            informazioni_sensibili.SetActive(true);
+            Destroy(collision.gameObject);
+            testoIndizio.enabled = true;
+            StartCoroutine(Fade());
         }
     }
+
+    private IEnumerator Fade() {
+        yield return new WaitForSeconds(3);
+        testoIndizio.enabled = false;
+    }
+
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.CompareTag("Enemy")){
