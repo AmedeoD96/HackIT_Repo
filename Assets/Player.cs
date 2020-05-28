@@ -36,6 +36,8 @@ public class Player : MonoBehaviour {
     [SerializeField] private AudioSource saltoSound;
     [SerializeField] private AudioSource colpitoSound;
     [SerializeField] private AudioSource indizioSound;
+    public GameObject informazioni_sensibili;
+    public Transform playerPosition;
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -82,6 +84,7 @@ public class Player : MonoBehaviour {
             Destroy(collision.gameObject);
             indizi++;
             indiziText.text = indizi.ToString();
+            informazioni_sensibili.SetActive(true);
         }
     }
 
@@ -136,6 +139,7 @@ public class Player : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground)){
             Jump();
         }
+        
     }
 
     private void Jump() {

@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
 
     bool canJumpAgain = true;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +32,7 @@ public class PlayerScript : MonoBehaviour
                 transform.position += new Vector3(0f, 0.5f, 0f);
                 canJumpAgain = false;
             }
+            
         }
         
     }
