@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
     private GameObject btnAvanti;
     [SerializeField] private string newLevel;
 
+    private GameObject retryButton;
+
     
     // Start is called before the first frame update
     void Start()
@@ -58,11 +60,13 @@ public class GameManager : MonoBehaviour
         playerImg = GameObject.Find("Player");
         baloonImg = GameObject.Find("Baloon");
         spiegazione = GameObject.Find("Spiegazione");
+        retryButton = GameObject.Find("Riprova");
         anim = playerImg.GetComponent<Animator>();
         baloonAnim = baloonImg.GetComponent<Animator>();
         playerImg.SetActive(false);
         baloonImg.SetActive(false);
         spiegazione.SetActive(false);
+        retryButton.SetActive(true);
         btnAvanti = GameObject.Find("Passa al livello successivo");
         btnAvanti.SetActive(false);
         
@@ -193,6 +197,7 @@ public class GameManager : MonoBehaviour
                             spiegazione.SetActive(true);
                             
                             btnAvanti.SetActive(true);
+                            retryButton.SetActive(false);
                         }
                         else  {
                             wrongText.SetActive(true);
