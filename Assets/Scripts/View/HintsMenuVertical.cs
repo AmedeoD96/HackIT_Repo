@@ -36,7 +36,7 @@ public class HintsMenuVertical : MonoBehaviour
     {
         if (monetine >= 3){
             suggerimento2.SetActive(true);
-            PlayerPrefs.SetInt("monetine", PlayerPrefs.GetInt("monetine")-3);
+            PlayerPrefs.SetInt("monetine", PlayerPrefs.GetInt("monetine")-5);
         }
         else{
             suggerimento2.GetComponent<TextMeshProUGUI>().text = "Non hai abbasta monete";

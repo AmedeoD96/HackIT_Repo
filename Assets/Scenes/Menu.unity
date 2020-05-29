@@ -385,7 +385,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sviluppato Da:
+  m_text: '<u>Sviluppato Da:</u>
 
     Colonna Pietro
 
@@ -397,13 +397,13 @@ MonoBehaviour:
     Lillo Alessandro
 
 
-    Si Ringrazia per gli Assets
+    <u>Si Ringrazia per gli Assets</u>
 
-    il sito Kenney.nl
+    il
+    sito Kenney.nl
 
 
-    Si
-    Ringrazia per gli effetti sonori
+    <u>Si Ringrazia per gli effetti sonori</u>
 
     Mulula
 

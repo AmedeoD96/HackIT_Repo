@@ -3125,7 +3125,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Compra per tre monete
+  m_Text: Compra per 5 monete
 --- !u!222 &1669899552
 CanvasRenderer:
   m_ObjectHideFlags: 0
