@@ -40,6 +40,8 @@ public class Player : MonoBehaviour {
     private Color color;
 
     private void Start() {
+        PlayerPrefs.SetString("scenaPrecedente", SceneManager.GetActiveScene().name);
+        
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
@@ -59,9 +61,6 @@ public class Player : MonoBehaviour {
             monetine = PlayerPrefs.GetInt("monetine");
             monetineText.text = monetine.ToString();
         }
-
-        
-
     }
 
     private void Update() {
