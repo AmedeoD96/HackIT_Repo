@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -84,7 +82,7 @@ public class GameManager : MonoBehaviour
         correctText.SetActive(false);
         wrongText.SetActive(false);
 
-        wordToGuess = "Elephant";
+        wordToGuess = "Ciro1964";
         lengthOfWordToGuess = wordToGuess.Length;
         wordToGuess = wordToGuess.ToUpper();
         lettersToGuess = new char[lengthOfWordToGuess];
@@ -136,7 +134,7 @@ public class GameManager : MonoBehaviour
             char letterPressed = letters[0];
             int letterPressedAsInt = Convert.ToInt32(letterPressed);
             
-            if (letterPressedAsInt >= 97 && letterPressed <= 122)  {
+            if ((letterPressedAsInt >= 97 && letterPressed <= 122) || (letterPressedAsInt >= 46 && letterPressed <= 57)) {
                 if (i < lengthOfWordToGuess) {
 
                     letterPressed = Char.ToUpper(letterPressed);
