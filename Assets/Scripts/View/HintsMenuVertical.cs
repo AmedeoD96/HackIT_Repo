@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class HintsMenuVertical : MonoBehaviour
 {
-    public GameObject TestoSuggerimento;
+    [SerializeField] private GameObject TestoSuggerimento;
+    [SerializeField] private GameObject suggerimento2;
+    [SerializeField] private GameObject suggerimento3;
     private int monetine;
     
     // Start is called before the first frame update
@@ -13,6 +15,10 @@ public class HintsMenuVertical : MonoBehaviour
     {
         monetine = PlayerPrefs.GetInt("monetine");
         TestoSuggerimento.SetActive(false);
+        
+        suggerimento2.SetActive(false);
+        
+        suggerimento3.SetActive(false);
     }
 
 
@@ -31,24 +37,24 @@ public class HintsMenuVertical : MonoBehaviour
     public void SuggerimentoDue()
     {
         if (monetine >= 3){
-            TestoSuggerimento.SetActive(true);
+            suggerimento2.SetActive(true);
             PlayerPrefs.SetInt("monetine", PlayerPrefs.GetInt("monetine")-3);
         }
         else{
-            TestoSuggerimento.GetComponent<TextMeshProUGUI>().text = "Non hai abbasta monete";
-            TestoSuggerimento.SetActive(true);
+            suggerimento2.GetComponent<TextMeshProUGUI>().text = "Non hai abbasta monete";
+            suggerimento2.SetActive(true);
         }
     }
     
     public void SuggerimentoTre()
     {
         if (monetine >= 4){
-            TestoSuggerimento.SetActive(true);
+            suggerimento3.SetActive(true);
             PlayerPrefs.SetInt("monetine", PlayerPrefs.GetInt("monetine")-4);
         }
         else{
-            TestoSuggerimento.GetComponent<TextMeshProUGUI>().text = "Non hai abbasta monete";
-            TestoSuggerimento.SetActive(true);
+            suggerimento3.GetComponent<TextMeshProUGUI>().text = "Non hai abbasta monete";
+            suggerimento3.SetActive(true);
         }
     }
 
