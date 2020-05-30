@@ -20,7 +20,8 @@ MonoBehaviour:
   - 'L''utente ordina su Amazon.it ogni settimana una cassa di cioccolato spedito
     dallo Stelvio. Ultimo ordine effettuato: 5 giorni fa'
   listaSuggerimenti:
-  - suggerimentTxt: fsafsafsafas
+  - suggerimentTxt: primo sug secondo liv
     costo: 2
-  - suggerimentTxt: ghdhfdhdfh
+  - suggerimentTxt: secondo sugg secondo liv
     costo: 5
+  spiegazione: Masticazzi secondo liv

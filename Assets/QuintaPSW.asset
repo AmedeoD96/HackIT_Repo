@@ -13,10 +13,15 @@ MonoBehaviour:
   m_Name: QuintaPSW
   m_EditorClassIdentifier: 
   id: 4
-  password: GiuliaStelvio2008
+  password: pass5
   indizi:
   - 'L''utente accede all''area personale del sito AlfaRomeo.it e lo visita ogni
     giorno dal 2008. Ultimo accesso al sito: ieri alle 21:17'
   - 'L''utente ordina su Amazon.it ogni settimana una cassa di cioccolato spedito
     dallo Stelvio. Ultimo ordine effettuato: 5 giorni fa'
-  listaSuggerimenti: []
+  listaSuggerimenti:
+  - suggerimentTxt: 1
+    costo: 2
+  - suggerimentTxt: 2
+    costo: 5
+  spiegazione: 5

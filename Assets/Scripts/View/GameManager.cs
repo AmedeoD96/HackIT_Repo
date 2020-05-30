@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour {
     private Animator baloonAnim;
     [SerializeField] private TextMeshProUGUI spiegazione;
     private GameObject btnAvanti;
-    [SerializeField] private string newLevel;
     private GameObject retryButton;
     public PasswordID currentPassword;
     [SerializeField] private List<TextMeshProUGUI> listaIndizi = new List<TextMeshProUGUI>();
@@ -211,6 +210,19 @@ public class GameManager : MonoBehaviour {
     }
 
     public void NextLevel() {
-        SceneManager.LoadScene(newLevel);
+        switch (currentPassword){
+            case PasswordID.Password1:
+                SceneManager.LoadScene("SecondoLivello");
+                break;
+            case PasswordID.Password2:
+                SceneManager.LoadScene("TerzoLivello");
+                break;
+            case PasswordID.Password3:
+                SceneManager.LoadScene("QuartoLivello");
+                break;
+            case PasswordID.Password4:
+                SceneManager.LoadScene("QuintoLivello");
+                break;
+        }
     }
 }

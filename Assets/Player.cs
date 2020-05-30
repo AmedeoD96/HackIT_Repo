@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour {
     Rigidbody2D rb;
@@ -38,6 +41,9 @@ public class Player : MonoBehaviour {
     private bool fadeOut = false;
     private float fadeSpeed = 0.1f;
     private Color color;
+    private List<string> volevi = new List<string>();
+    private int count = 0;
+
 
     private void Start() {
         PlayerPrefs.SetString("scenaPrecedente", SceneManager.GetActiveScene().name);
@@ -61,6 +67,9 @@ public class Player : MonoBehaviour {
             monetine = PlayerPrefs.GetInt("monetine");
             monetineText.text = monetine.ToString();
         }
+        volevi.Add("Volevi1");
+        volevi.Add("Volevi2");
+        volevi.Add("Volevi3");
     }
 
     private void Update() {
@@ -91,6 +100,9 @@ public class Player : MonoBehaviour {
             indiziText.text = indizi.ToString();
             Destroy(collision.gameObject);
             testoIndizio.enabled = true;
+            if (SceneManager.GetActiveScene().name.Equals("QuintoLivello")){
+               
+            }
             StartCoroutine(Fade());
         }
     }
