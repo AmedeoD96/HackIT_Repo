@@ -4,19 +4,19 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
     public GameObject letter;
 
-    public GameObject correctText;
+    private GameObject correctText;
 
-    public GameObject wrongText;
+    private GameObject wrongText;
 
-    public GameObject cen;
+    private GameObject cen;
 
-    public Transform canvas;
+    private Transform canvas;
 
     private string wordToGuess = "";
+    private Dictionary<string, string> passwords;
 
     private int lengthOfWordToGuess;
 
@@ -49,11 +49,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string newLevel;
 
     private GameObject retryButton;
+    public PasswordID currentPassword;
+
+    [SerializeField] private List<TextMeshProUGUI> listaIndizi = new List<TextMeshProUGUI>();
+    private const string indizio = "Indizio [x]: ";
 
     
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         correctText = GameObject.Find("Correct");
         wrongText = GameObject.Find("Wrong");
         cen = GameObject.Find("CenterOfTheScreen");
@@ -69,24 +72,38 @@ public class GameManager : MonoBehaviour
         retryButton.SetActive(true);
         btnAvanti = GameObject.Find("Passa al livello successivo");
         btnAvanti.SetActive(false);
+        passwords = new Dictionary<string, string>();
         
+        currentPassword = GestorePassword.intance.GetUnusedPasswordId();
+        var passwordData = GestorePassword.intance.GetPasswordData(currentPassword);
+        int i = 0;
+
+        for (i = 0; i < passwordData.indizi.Count; i++){
+            listaIndizi[i].gameObject.SetActive(true);
+            listaIndizi[i].SetText(indizio.Replace("[x]", (i+1).ToString()) + passwordData.indizi[i]);
+        }
+
+        if (listaIndizi.Count >= i + 1){
+            for (int k=i; k < listaIndizi.Count; k++){
+                listaIndizi[k].gameObject.SetActive(false);
+            }
+        }
 
         initGame();
         initLetters();
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         checkKeyboard();
-       
     }
 
     void initGame() {
         correctText.SetActive(false);
         wrongText.SetActive(false);
 
-        wordToGuess = "Ciro1964";
+        wordToGuess = GestorePassword.intance.GetPasswordData(currentPassword).password;
+        
         lengthOfWordToGuess = wordToGuess.Length;
         wordToGuess = wordToGuess.ToUpper();
         lettersToGuess = new char[lengthOfWordToGuess];
@@ -94,17 +111,13 @@ public class GameManager : MonoBehaviour
         lettersToGuess = wordToGuess.ToCharArray();
     }
 
-    void initLetters() 
-    {
-        for (int i = 0; i < lengthOfWordToGuess; i++) 
-        {
+    void initLetters() {
+        for (int i = 0; i < lengthOfWordToGuess; i++) {
             Vector3 newPosition;
             newPosition = new Vector3(cen.transform.position.x + ((i - lengthOfWordToGuess / 2.0f) * 100), cen.transform.position.y, cen.transform.position.z);
-            GameObject l = (GameObject)Instantiate(letter, newPosition, Quaternion.identity);
+            GameObject l = Instantiate(letter, newPosition, Quaternion.identity);
             l.name = "letter" + (i + 1);
             l.transform.SetParent(canvas);
-
-            //allWordsSelected[i] = false;
         }
     } 
 
@@ -122,7 +135,7 @@ public class GameManager : MonoBehaviour
         {
             
             
-            if (wrongText.activeSelf == true)
+            if (wrongText.activeSelf)
             {
                 SceneManager.LoadScene(SceneName);
             }
@@ -145,7 +158,6 @@ public class GameManager : MonoBehaviour
 
                     GameObject.Find("letter" + (i+1)).GetComponent<TextMeshProUGUI>().text = letterPressed.ToString();
                     GameObject.Find("letter" + (i+1)).GetComponent<TextMeshProUGUI>().color = Color.white;
-                    //allWordsSelected[i] = true;
                     if (dizionario.ContainsKey(i))
                     {
                         dizionario.Remove(i);
@@ -160,33 +172,13 @@ public class GameManager : MonoBehaviour
                     {
                         i = i - lengthOfWordToGuess;
                     }
+                }
 
-                    //result += letterPressed.ToString();
-                } 
-                //if (i == lengthOfWordToGuess)  {
-
-                    //for (int j = 0; j < lengthOfWordToGuess; j++)
-                    //{
-                     //   k = 0;
-                      //  if (allWordsSelected[j] == true)
-                       // {
-                       //     k++;
-                       // }
-                    //}
-
-                    if (k == lengthOfWordToGuess) //poi va k
-                    {
-                        //correctText.SetActive(true);
-                        //for (i = 0; i < lengthOfWordToGuess; i++)
-                        //{
-                        //    parola = parola + result[i];
-                        //}
-                        foreach (var indexLetter in dizionario)
-                        {
+                if (k == lengthOfWordToGuess) { //Poi va a k
+                        foreach (var indexLetter in dizionario) {
                             parola += indexLetter.Value;
                         }
-                        //parola = result;
-                        //Debug.Log(parola);
+                        
                         risultato = String.Equals(parola, wordToGuess);
                         if (risultato == true)  {
                             correctText.SetActive(true);
@@ -202,10 +194,8 @@ public class GameManager : MonoBehaviour
                         else  {
                             wrongText.SetActive(true);
                         }
-                    }
+                }
 
-                //}
-                
             } else if(letterPressedAsInt == 32)  {
                 GameObject.Find("letter" + (i+1)).GetComponent<TextMeshProUGUI>().color = Color.white;
                 i++;
@@ -218,7 +208,6 @@ public class GameManager : MonoBehaviour
                 {
                     GameObject.Find("letter" + (i+1)).GetComponent<TextMeshProUGUI>().color = Color.white;
                     i--;
-                    //result = result.Remove(result.Length - 1);   
                 }
             }
         }
@@ -243,6 +232,4 @@ public class GameManager : MonoBehaviour
     public void NextLevel() {
         SceneManager.LoadScene(newLevel);
     }
-    
-    
 }

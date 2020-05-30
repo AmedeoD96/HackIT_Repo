@@ -12,21 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/PrimoLivello.unity
     guid: 2593339bd05010f42ae14e0f1fbe3342
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: e1c544f0b3dc89641b518e2ce775f05d
-  - enabled: 1
-    path: Assets/Scenes/WordGameProva.unity
-    guid: d9633c6c5f01ccd4694391fd3cdf3b14
+    path: Assets/Scenes/SecondoLivello.unity
+    guid: 74257065f1d9db64f9e5c931b292905d
   - enabled: 1
     path: Assets/Scenes/TerzoLivello.unity
     guid: 5b3c21c1b5dcc1c469f17d5ac71fbf03
   - enabled: 1
-    path: Assets/Scenes/HintsMenu.unity
-    guid: 3c1a6e58db1ee254eb9905e79f72947a
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+    path: Assets/Scenes/QuartoLivello.unity
+    guid: 40bd6f1e924fa814681cb41054fe340e
+  - enabled: 1
+    path: Assets/Scenes/QuintoLivello.unity
+    guid: 387e9e0c1eea36e4aa47961b2ebdbb2e
+  - enabled: 1
+    path: Assets/Scenes/WordGameProva.unity
+    guid: d9633c6c5f01ccd4694391fd3cdf3b14
   m_configObjects: {}
