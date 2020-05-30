@@ -19,4 +19,8 @@ MonoBehaviour:
     giorno dal 2008. Ultimo accesso al sito: ieri alle 21:17'
   - 'L''utente ordina su Amazon.it ogni settimana una cassa di cioccolato spedito
     dallo Stelvio. Ultimo ordine effettuato: 5 giorni fa'
-  listaSuggerimenti: []
+  listaSuggerimenti:
+  - suggerimentTxt: fsafsafsafas
+    costo: 2
+  - suggerimentTxt: ghdhfdhdfh
+    costo: 5

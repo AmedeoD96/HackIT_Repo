@@ -204,7 +204,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3916146032407444270}
-        m_MethodName: ShowSecondoSuggerimento
+        m_MethodName: MostraSuggerimento2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -681,7 +681,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188802792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -8.031086}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1574310913}
@@ -2617,7 +2617,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574310912}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 8.328938}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 188802793}
@@ -2643,6 +2643,7 @@ MonoBehaviour:
   letter: {fileID: 1489517342565209098, guid: af89e36210efeeb4399c49a98d318fd5, type: 3}
   parola: 
   SceneName: WordGame
+  spiegazione: {fileID: 105135297}
   newLevel: SecondoLivello
   currentPassword: 0
   listaIndizi:
@@ -4750,6 +4751,7 @@ MonoBehaviour:
   suggerimento1: {fileID: 1621850924}
   suggerimento2: {fileID: 1046936906}
   _gameManager: {fileID: 1574310914}
+  currentPassword: 0
 --- !u!222 &3955412836440535047
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4870,7 +4872,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3916146032407444270}
-        m_MethodName: ShowPrimoSuggerimento
+        m_MethodName: MostraSuggerimento1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

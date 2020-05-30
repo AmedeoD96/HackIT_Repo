@@ -6,55 +6,34 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     public GameObject letter;
-
     private GameObject correctText;
-
     private GameObject wrongText;
-
     private GameObject cen;
-
     private Transform canvas;
-
     private string wordToGuess = "";
     private Dictionary<string, string> passwords;
-
     private int lengthOfWordToGuess;
-
     char[] lettersToGuess;
-
     bool[] lettersGuessed;
-
     int i = 0;
-
     String result = "";
-
-    //public bool [] allWordsSelected;
     public String parola;
-
     int k = 0;
-    
     readonly SortedList<int,char> dizionario = new SortedList<int, char>();
-
     [SerializeField] private string SceneName = "WordGame";
-
     private bool risultato;
     private GameObject playerImg;
     private GameObject baloonImg;
     private Animator anim;
     private Animator baloonAnim;
-
-    private GameObject spiegazione;
-
+    [SerializeField] private TextMeshProUGUI spiegazione;
     private GameObject btnAvanti;
     [SerializeField] private string newLevel;
-
     private GameObject retryButton;
     public PasswordID currentPassword;
-
     [SerializeField] private List<TextMeshProUGUI> listaIndizi = new List<TextMeshProUGUI>();
     private const string indizio = "Indizio [x]: ";
 
-    
     // Start is called before the first frame update
     void Start() {
         correctText = GameObject.Find("Correct");
@@ -62,21 +41,22 @@ public class GameManager : MonoBehaviour {
         cen = GameObject.Find("CenterOfTheScreen");
         playerImg = GameObject.Find("Player");
         baloonImg = GameObject.Find("Baloon");
-        spiegazione = GameObject.Find("Spiegazione");
         retryButton = GameObject.Find("Riprova");
         anim = playerImg.GetComponent<Animator>();
         baloonAnim = baloonImg.GetComponent<Animator>();
         playerImg.SetActive(false);
         baloonImg.SetActive(false);
-        spiegazione.SetActive(false);
+        spiegazione.gameObject.SetActive(false);
         retryButton.SetActive(true);
         btnAvanti = GameObject.Find("Passa al livello successivo");
         btnAvanti.SetActive(false);
         passwords = new Dictionary<string, string>();
-        
+
         currentPassword = GestorePassword.intance.GetUnusedPasswordId();
         var passwordData = GestorePassword.intance.GetPasswordData(currentPassword);
         int i = 0;
+
+        spiegazione.SetText(passwordData.spiegazione);
 
         for (i = 0; i < passwordData.indizi.Count; i++){
             listaIndizi[i].gameObject.SetActive(true);
@@ -186,7 +166,8 @@ public class GameManager : MonoBehaviour {
                             anim.Play("PlayerReveal");
                             baloonAnim.Play("BaloonReveal");
                             baloonImg.SetActive(true);
-                            spiegazione.SetActive(true);
+                            
+                            spiegazione.gameObject.SetActive(true);
                             
                             btnAvanti.SetActive(true);
                             retryButton.SetActive(false);

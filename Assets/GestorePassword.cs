@@ -32,8 +32,6 @@ public class GestorePassword : MonoBehaviour {
     public PasswordID GetUnusedPasswordId() {
         var currentId = ids[currentIndex];
         currentIndex++;
-        //PlayerPrefs.SetInt(chiaveIndex, currentIndex);
-        //PlayerPrefs.Save();
         return currentId;
     }
 }
