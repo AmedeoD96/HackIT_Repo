@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     private GameObject correctText;
     private GameObject wrongText;
     private GameObject cen;
-    private Transform canvas;
+    public Transform canvas;
     private string wordToGuess = "";
     private Dictionary<string, string> passwords;
     private int lengthOfWordToGuess;

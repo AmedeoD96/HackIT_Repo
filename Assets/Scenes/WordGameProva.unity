@@ -2641,6 +2641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letter: {fileID: 1489517342565209098, guid: af89e36210efeeb4399c49a98d318fd5, type: 3}
+  canvas: {fileID: 2039265631}
   parola: 
   SceneName: WordGame
   spiegazione: {fileID: 105135297}
