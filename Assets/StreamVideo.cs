@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -10,17 +9,18 @@ public class StreamVideo : MonoBehaviour
 
     public VideoPlayer videoPlayer;
     // Start is called before the first frame update
-    void Start()
-    {
+
+
+    void Awake() {
+        videoPlayer.Prepare();
         StartCoroutine(playVideo());
     }
 
     private IEnumerator playVideo()
     {
-        videoPlayer.Prepare();
+        
         WaitForSeconds waitForSeconds = new WaitForSeconds(1);
-        while (!videoPlayer.isPrepared)
-        {
+        while (!videoPlayer.isPrepared){
             yield return waitForSeconds;
             break;
         }
