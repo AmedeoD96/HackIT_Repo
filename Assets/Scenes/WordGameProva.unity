@@ -4889,6 +4889,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8559771191118655971}
+        m_MethodName: SelezioneTab1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &2843956589642855126
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4990,7 +5001,7 @@ GameObject:
   - component: {fileID: 7937418742902500098}
   - component: {fileID: 6993884182641667165}
   m_Layer: 5
-  m_Name: Tab
+  m_Name: TabSelezionabile_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5009,7 +5020,7 @@ GameObject:
   - component: {fileID: 7937418742308849166}
   - component: {fileID: 6993884181096268113}
   m_Layer: 5
-  m_Name: Tab
+  m_Name: TabSelezionabile_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5462,6 +5473,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8559771191118655971}
+        m_MethodName: SelezioneTab2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6993884182641667165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5507,6 +5529,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6995762491278942009}
         m_MethodName: SetAsLastSibling
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8559771191118655971}
+        m_MethodName: SelezioneTab3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5675,13 +5708,29 @@ GameObject:
   - component: {fileID: 7682469208417219027}
   - component: {fileID: 2901817696987301613}
   - component: {fileID: 2841057795136127410}
+  - component: {fileID: 8559771191118655971}
   m_Layer: 5
-  m_Name: ActiveRiddleBtn
+  m_Name: TabSelezionabile_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8559771191118655971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8559771191118655970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae638db927a960d47ac8cdcf5bd7acfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tab1: {fileID: 8559771191118655970}
+  Tab2: {fileID: 3506150249829363969}
+  Tab3: {fileID: 3506150248296356877}
 --- !u!114 &9155015807527818835
 MonoBehaviour:
   m_ObjectHideFlags: 0
