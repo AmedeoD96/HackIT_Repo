@@ -5982,6 +5982,8 @@ MonoBehaviour:
   _gameManager: {fileID: 1574310914}
   currentPassword: 0
   moneteDisponibili: {fileID: 453324534}
+  pulsanteSuggerimento1: {fileID: 496203255665126953}
+  pulsanteSuggerimento2: {fileID: 40612929}
 --- !u!222 &3955412836440535047
 CanvasRenderer:
   m_ObjectHideFlags: 0

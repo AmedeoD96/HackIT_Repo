@@ -13,6 +13,8 @@ public class HintsMenuVertical : MonoBehaviour
     [SerializeField] private TextMeshProUGUI moneteDisponibili;
     private string moneteText;
     private const string txt = "Monete disponibili: ";
+    public GameObject pulsanteSuggerimento1;
+    public GameObject pulsanteSuggerimento2;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,7 @@ public class HintsMenuVertical : MonoBehaviour
             monetine -= passwordData.listaSuggerimenti[0].costo;
             moneteText = monetine.ToString();
             moneteDisponibili.SetText(txt + moneteText);
+            pulsanteSuggerimento1.SetActive(false);
         }
         else{
             suggerimento1.SetText(noMoney);
@@ -53,6 +56,7 @@ public class HintsMenuVertical : MonoBehaviour
             monetine -= passwordData.listaSuggerimenti[1].costo;
             moneteText = monetine.ToString();
             moneteDisponibili.SetText(txt + moneteText);
+            pulsanteSuggerimento2.SetActive(false);
         }
         else{
             suggerimento2.SetText(noMoney);
