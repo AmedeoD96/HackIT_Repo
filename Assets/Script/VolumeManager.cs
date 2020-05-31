@@ -11,7 +11,8 @@ public class VolumeManager : MonoBehaviour
 
     void Start()
     {
-        slider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+        //slider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+        slider.value = 1f;
     }
 
     public void SetLevel()
