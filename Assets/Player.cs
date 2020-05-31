@@ -67,9 +67,9 @@ public class Player : MonoBehaviour {
             monetine = PlayerPrefs.GetInt("monetine");
             monetineText.text = monetine.ToString();
         }
-        volevi.Add("Volevi1");
-        volevi.Add("Volevi2");
-        volevi.Add("Volevi3");
+        volevi.Add("Online non sono reperibili informazioni personali");
+        volevi.Add("L’utente fa utilizzo di una Virtual Private Network");
+        volevi.Add("L’utente utilizza la Verifica a due passaggi");
     }
 
     private void Update() {

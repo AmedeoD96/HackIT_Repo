@@ -15,12 +15,13 @@ MonoBehaviour:
   id: 3
   password: elephant20
   indizi:
-  - pass 4
-  - pass 4 2
+  - "la password \xE8 \"elephant20\""
+  - Ai gatti piacciono i gomitoli
+  - A Gennaio ci sono i saldi
   listaSuggerimenti:
-  - suggerimentTxt: sugg 1
+  - suggerimentTxt: A volte alcune informazioni possono essere fuorvianti
     costo: 2
-  - suggerimentTxt: sugg 23
+  - suggerimentTxt: "le prime due lettere della password sono \u201CE\u201D ed \u201CL\u201D"
     costo: 5
   spiegazione: "se l\u2019utente avesse usato la verifica in 2 passaggi, anche sapendo
     una password non sarei riuscito ad entrare nel sistema. L\u2019autenticazione

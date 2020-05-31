@@ -15,13 +15,16 @@ MonoBehaviour:
   id: 2
   password: zeinca
   indizi:
-  - indizio 1 liv 3
-  - indizio 2 liv 3
-  - indizio 3 liv 3
+  - Zemo
+  - Inferno
+  - Calcolatrice
+  - a volte, per creare delle parole si possono ottenere parti da altre che, a primo
+    impatto, sembrerebbero sconnesse tra loro
   listaSuggerimenti:
-  - suggerimentTxt: sugg 1 liv 3
+  - suggerimentTxt: prendi le prime due parole di ogni indizio e usale
     costo: 2
-  - suggerimentTxt: sugg 2 liv 3
+  - suggerimentTxt: "le prime due lettere della password sono \u201CZ\u201D ed \u201CE\u201D.
+      Le ultime due sono \u201CC\u201D ed \u201CA\u201D"
     costo: 5
   spiegazione: "esistono diversi metodi per creare e ricordare  una password inattaccabile.
     Un metodo riconosciuto e largamente utilizzato prevede l\u2019utilizzo di un
