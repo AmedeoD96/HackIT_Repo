@@ -101,8 +101,10 @@ public class Player : MonoBehaviour {
             Destroy(collision.gameObject);
             testoIndizio.enabled = true;
             if (SceneManager.GetActiveScene().name.Equals("QuintoLivello")){
-               
+               testoIndizio.SetText(volevi[count]);
             }
+
+            count++;
             StartCoroutine(Fade());
         }
     }
