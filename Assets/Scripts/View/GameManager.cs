@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     public GameObject letter;
@@ -22,30 +23,31 @@ public class GameManager : MonoBehaviour {
     readonly SortedList<int,char> dizionario = new SortedList<int, char>();
     [SerializeField] private string SceneName = "WordGame";
     private bool risultato;
-    private GameObject playerImg;
-    private GameObject baloonImg;
-    private Animator anim;
-    private Animator baloonAnim;
-    [SerializeField] private TextMeshProUGUI spiegazione;
+    
+
+    [SerializeField] private Button btnSpiegazione;
+    
     private GameObject btnAvanti;
     private GameObject retryButton;
     public PasswordID currentPassword;
     [SerializeField] private List<TextMeshProUGUI> listaIndizi = new List<TextMeshProUGUI>();
-    private const string indizio = "Indizio [x]: ";
+    private const string indizio = "Dato sensibile [x]: ";
+    [SerializeField] private TextMeshProUGUI moneteDisponibili;
+    private const string disponibili = "Monete disponibili: [x]";
 
     // Start is called before the first frame update
     void Start() {
         correctText = GameObject.Find("Correct");
         wrongText = GameObject.Find("Wrong");
         cen = GameObject.Find("CenterOfTheScreen");
-        playerImg = GameObject.Find("Player");
-        baloonImg = GameObject.Find("Baloon");
+ 
+
         retryButton = GameObject.Find("Riprova");
-        anim = playerImg.GetComponent<Animator>();
-        baloonAnim = baloonImg.GetComponent<Animator>();
-        playerImg.SetActive(false);
-        baloonImg.SetActive(false);
-        spiegazione.gameObject.SetActive(false);
+     
+
+       
+        btnSpiegazione.gameObject.SetActive(false);
+        
         retryButton.SetActive(true);
         btnAvanti = GameObject.Find("Passa al livello successivo");
         btnAvanti.SetActive(false);
@@ -55,7 +57,7 @@ public class GameManager : MonoBehaviour {
         var passwordData = GestorePassword.intance.GetPasswordData(currentPassword);
         int i = 0;
 
-        spiegazione.SetText(passwordData.spiegazione);
+        btnSpiegazione.GetComponentInChildren<TextMeshProUGUI>().SetText(passwordData.spiegazione);
 
         for (i = 0; i < passwordData.indizi.Count; i++){
             listaIndizi[i].gameObject.SetActive(true);
@@ -67,6 +69,8 @@ public class GameManager : MonoBehaviour {
                 listaIndizi[k].gameObject.SetActive(false);
             }
         }
+        
+        moneteDisponibili.SetText(disponibili.Replace("[x]", PlayerPrefs.GetInt("monetine").ToString()));
 
         initGame();
         initLetters();
@@ -137,8 +141,7 @@ public class GameManager : MonoBehaviour {
 
                     GameObject.Find("letter" + (i+1)).GetComponent<TextMeshProUGUI>().text = letterPressed.ToString();
                     GameObject.Find("letter" + (i+1)).GetComponent<TextMeshProUGUI>().color = Color.white;
-                    if (dizionario.ContainsKey(i))
-                    {
+                    if (dizionario.ContainsKey(i)) {
                         dizionario.Remove(i);
                     }
                     else
@@ -147,8 +150,7 @@ public class GameManager : MonoBehaviour {
                     }
                     dizionario.Add(i, letterPressed);
                     i++;
-                    if (k != lengthOfWordToGuess && i== lengthOfWordToGuess)
-                    {
+                    if (k != lengthOfWordToGuess && i== lengthOfWordToGuess) {
                         i = i - lengthOfWordToGuess;
                     }
                 }
@@ -159,14 +161,9 @@ public class GameManager : MonoBehaviour {
                         }
                         
                         risultato = String.Equals(parola, wordToGuess);
-                        if (risultato == true)  {
+                        if (risultato)  {
                             correctText.SetActive(true);
-                            playerImg.SetActive(true);
-                            anim.Play("PlayerReveal");
-                            baloonAnim.Play("BaloonReveal");
-                            baloonImg.SetActive(true);
-                            
-                            spiegazione.gameObject.SetActive(true);
+                            btnSpiegazione.gameObject.SetActive(true);
                             
                             btnAvanti.SetActive(true);
                             retryButton.SetActive(false);

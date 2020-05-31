@@ -85072,7 +85072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f116f8f0a7277042a01b51d5b4dddee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: WordGameProva
+  sceneName: GraziePerAverGiocato
   message: {fileID: 98380273}
   indizi: 3
 --- !u!61 &1580497921

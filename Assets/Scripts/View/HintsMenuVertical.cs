@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Text.RegularExpressions;
+using TMPro;
 using UnityEngine;
 
 public class HintsMenuVertical : MonoBehaviour
@@ -9,6 +10,9 @@ public class HintsMenuVertical : MonoBehaviour
     public PasswordID currentPassword;
     private int monetine;
     private const string noMoney = "Non hai abbastanza monete";
+    [SerializeField] private TextMeshProUGUI moneteDisponibili;
+    private string moneteText;
+    private const string txt = "Monete disponibili: ";
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,8 @@ public class HintsMenuVertical : MonoBehaviour
             suggerimento1.gameObject.SetActive(true);
             PlayerPrefs.SetInt("monetine", (monetine - passwordData.listaSuggerimenti[0].costo));
             PlayerPrefs.Save();
+            moneteText = PlayerPrefs.GetInt("monetine").ToString();
+            moneteDisponibili.SetText(txt + moneteText);
         }
         else{
             suggerimento1.SetText(noMoney);
@@ -37,12 +43,15 @@ public class HintsMenuVertical : MonoBehaviour
     
     public void MostraSuggerimento2() {
         var passwordData = GestorePassword.intance.GetPasswordData(currentPassword);
+        moneteDisponibili.SetText(txt + moneteText);
 
         if (monetine >= passwordData.listaSuggerimenti[1].costo){
             suggerimento2.SetText(passwordData.listaSuggerimenti[1].suggerimentTxt);
             suggerimento2.gameObject.SetActive(true);
             PlayerPrefs.SetInt("monetine", (monetine - passwordData.listaSuggerimenti[1].costo));
             PlayerPrefs.Save();
+            moneteText = PlayerPrefs.GetInt("monetine").ToString();
+            moneteDisponibili.SetText(txt + moneteText);
         }
         else{
             suggerimento2.SetText(noMoney);
