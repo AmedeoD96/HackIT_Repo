@@ -18,19 +18,19 @@ MonoBehaviour:
   - Zemo
   - Inferno
   - Calcolatrice
-  - a volte, per creare delle parole si possono ottenere parti da altre che, a primo
+  - A volte, per creare delle parole si possono ottenere parti da altre che, a primo
     impatto, sembrerebbero sconnesse tra loro
   listaSuggerimenti:
-  - suggerimentTxt: prendi le prime due parole di ogni indizio e usale
+  - suggerimentTxt: Prendi le prime due parole di ogni indizio e usale
     costo: 2
-  - suggerimentTxt: "le prime due lettere della password sono \u201CZ\u201D ed \u201CE\u201D.
+  - suggerimentTxt: "Le prime due lettere della password sono \u201CZ\u201D ed \u201CE\u201D.
       Le ultime due sono \u201CC\u201D ed \u201CA\u201D"
     costo: 5
-  spiegazione: "esistono diversi metodi per creare e ricordare  una password inattaccabile.
+  spiegazione: "Esistono diversi metodi per creare e ricordare una password inattaccabile.
     Un metodo riconosciuto e largamente utilizzato prevede l\u2019utilizzo di un
     libro: si prende una frase a libera scelta, si ottengono le parole chiave ed
     in base alla loro posizione all\u2019interno del testo prendiamo alcuni caratteri.
-    Ad esempio: nella frase \u201C\u201Cc\u2019era una volta in una galassia lontana
-    lontana\u201D prendiamo caratteri dalle parole chiave \u201Cvolta\u201D, \u201Cgalassia\u201D
+    Ad esempio: nella frase \"C\u2019era una volta in una galassia lontana lontana\u201D
+    prendiamo caratteri dalle parole chiave \u201Cvolta\u201D, \u201Cgalassia\u201D
     e \u201Clontana\u201D e, in base alla loro posizione prendiamo una coppia di
     caratteri:  \u201Cvolaana\u201D"

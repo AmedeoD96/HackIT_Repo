@@ -124,9 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f116f8f0a7277042a01b51d5b4dddee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
+  sceneName: WordGameProva
   message: {fileID: 1317538300956231215}
-  indizi: 0
+  indizi: 3
 --- !u!95 &1317538300347996807
 Animator:
   serializedVersion: 3
