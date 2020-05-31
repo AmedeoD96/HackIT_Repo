@@ -30,15 +30,17 @@ public class HintsMenuVertical : MonoBehaviour
         if (monetine >= passwordData.listaSuggerimenti[0].costo){
             suggerimento1.SetText(passwordData.listaSuggerimenti[0].suggerimentTxt);
             suggerimento1.gameObject.SetActive(true);
-            PlayerPrefs.SetInt("monetine", (monetine - passwordData.listaSuggerimenti[0].costo));
-            PlayerPrefs.Save();
-            moneteText = PlayerPrefs.GetInt("monetine").ToString();
+            monetine -= passwordData.listaSuggerimenti[0].costo;
+            moneteText = monetine.ToString();
             moneteDisponibili.SetText(txt + moneteText);
         }
         else{
             suggerimento1.SetText(noMoney);
             suggerimento1.gameObject.SetActive(true);
         }
+        
+        PlayerPrefs.SetInt("monetine", monetine);
+        PlayerPrefs.Save();
     }
     
     public void MostraSuggerimento2() {
@@ -48,14 +50,16 @@ public class HintsMenuVertical : MonoBehaviour
         if (monetine >= passwordData.listaSuggerimenti[1].costo){
             suggerimento2.SetText(passwordData.listaSuggerimenti[1].suggerimentTxt);
             suggerimento2.gameObject.SetActive(true);
-            PlayerPrefs.SetInt("monetine", (monetine - passwordData.listaSuggerimenti[1].costo));
-            PlayerPrefs.Save();
-            moneteText = PlayerPrefs.GetInt("monetine").ToString();
+            monetine -= passwordData.listaSuggerimenti[1].costo;
+            moneteText = monetine.ToString();
             moneteDisponibili.SetText(txt + moneteText);
         }
         else{
             suggerimento2.SetText(noMoney);
             suggerimento2.gameObject.SetActive(true);
         }
+        
+        PlayerPrefs.SetInt("monetine", monetine);
+        PlayerPrefs.Save();
     }
 }

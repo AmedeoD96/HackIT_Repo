@@ -15,15 +15,15 @@ MonoBehaviour:
   id: 0
   password: Ciro1964
   indizi:
-  - "L'utente \xE8 nato nel 1964"
+  - L'utente e' nato nel 1964
   - L'utente ha un figlio che si chiama Ciro
   listaSuggerimenti:
-  - suggerimentTxt: "La password \xE8 una combinazione degli indizi che hai trovato."
+  - suggerimentTxt: La password e' una combinazione degli indizi che hai trovato.
     costo: 2
-  - suggerimentTxt: Le prime due lettere della password sono "C" ed "I" e le ultime
+  - suggerimentTxt: I primi due caratteri della password sono "C" ed "I" e gli ultimi
       due sono "6" e "4"
     costo: 5
-  spiegazione: "Che stupido! Usare informazioni personali per proteggere i propri
-    dati \xE8 una delle cose pi\xF9 sconsigliate che si possa fare. Se solo avesse
-    usato parole senza contesto, oppure, caratteri speciali posti qua e l\xE0, avrei
-    avuto molta pi\xF9 difficolt\xE0."
+  spiegazione: Che stupido! Usare informazioni personali per proteggere i propri
+    dati e' una delle cose piu' sconsigliate che si possa fare. Se solo avesse usato
+    parole senza contesto, oppure, caratteri speciali posti qua e la', avrei avuto
+    molta piu' difficolta'.

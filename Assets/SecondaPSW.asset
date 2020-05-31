@@ -23,18 +23,18 @@ MonoBehaviour:
     Il cane si chiama Giulia. Accesso settimanale."
   listaSuggerimenti:
   - suggerimentTxt: "I siti visitati ci parlano delle abitudini e delle passioni
-      di una persona. Di solito si tratta di elementi che l\u2019utente \xE8 in grado
-      di ricordare facilmente e che si rifanno alla sua quotidianit\xE0. "
+      di una persona. Di solito si tratta di elementi che l\u2019utente e' in grado
+      di ricordare facilmente e che si rifanno alla sua quotidianita'. "
     costo: 2
-  - suggerimentTxt: "La password \xE8 composta da due parole e da due numeri. la
-      prima parola \xE8 giulia. I due numeri sono 0 ed 8"
+  - suggerimentTxt: La password e' composta da due parole e da due numeri. La prima
+      parola e' Giulia. I due numeri sono 0 ed 8
     costo: 5
-  spiegazione: "se avesse usato una Virtual Private Network non avrei mai potuto
-    scoprire quali siti avesse visitato pi\xF9 spesso. Una VPN \xE8 una rete di telecomunicazioni
+  spiegazione: "Se avesse usato una Virtual Private Network non avrei mai potuto
+    scoprire quali siti avesse visitato piu' spesso. Una VPN e' una rete di telecomunicazioni
     privata, instaurata come connessione tra soggetti che utilizzano protocolli di
-    rete pubbliche e condivise. Lo scopo delle reti VPN \xE8 quello di offrire alle
-    aziende, a un costo minore, le stesse possibilit\xE0 delle linee private a noleggio,
+    rete pubbliche e condivise. Lo scopo delle reti VPN e' quello di offrire alle
+    aziende, a un costo minore, le stesse possibilita' delle linee private a noleggio,
     ma sfruttando reti condivise pubbliche. Al giorno d\u2019oggi l\u2019utilizzo
-    di una VPN deve diventare normalit\xE0 per chiunque. Ogni utente deve proteggere
+    di una VPN deve diventare normalita' per chiunque. Ogni utente deve proteggere
     al meglio le proprie ricerche online. Soprattutto se poi queste ultime vengono
     utilizzate a suo discapito. "
