@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: QuartaPSW
   m_EditorClassIdentifier: 
   id: 3
-  password: pass4
+  password: elephant20
   indizi:
   - pass 4
   - pass 4 2
@@ -22,4 +22,12 @@ MonoBehaviour:
     costo: 2
   - suggerimentTxt: sugg 23
     costo: 5
-  spiegazione: spiegone 4
+  spiegazione: "se l\u2019utente avesse usato la verifica in 2 passaggi, anche sapendo
+    una password non sarei riuscito ad entrare nel sistema. L\u2019autenticazione
+    o verifica in due passaggi \xE8 una funzionalit\xE0 offerta da un grande numero
+    di servizi online e aggiunge un ulteriore livello di sicurezza al processo di
+    login dell\u2019account, richiedendo all\u2019utente di indicare 2 forme di autenticazione.
+    La prima forma \xE8 quella normale, in genere la password. Per la seconda forma
+    si pu\xF2 scegliere tra diverse modalit\xE0; forse la pi\xF9 popolare \xE8 l\u2019SMS
+    o il codice email. La teoria che sta dietro alla verifica in due passaggi \xE8
+    che per loggarvi, dovete sapere qualcosa e possedere qualcosa"

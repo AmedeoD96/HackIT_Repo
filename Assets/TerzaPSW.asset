@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TerzaPSW
   m_EditorClassIdentifier: 
   id: 2
-  password: pass3
+  password: zeinca
   indizi:
   - indizio 1 liv 3
   - indizio 2 liv 3
@@ -23,4 +23,11 @@ MonoBehaviour:
     costo: 2
   - suggerimentTxt: sugg 2 liv 3
     costo: 5
-  spiegazione: spiegone 3
+  spiegazione: "esistono diversi metodi per creare e ricordare  una password inattaccabile.
+    Un metodo riconosciuto e largamente utilizzato prevede l\u2019utilizzo di un
+    libro: si prende una frase a libera scelta, si ottengono le parole chiave ed
+    in base alla loro posizione all\u2019interno del testo prendiamo alcuni caratteri.
+    Ad esempio: nella frase \u201C\u201Cc\u2019era una volta in una galassia lontana
+    lontana\u201D prendiamo caratteri dalle parole chiave \u201Cvolta\u201D, \u201Cgalassia\u201D
+    e \u201Clontana\u201D e, in base alla loro posizione prendiamo una coppia di
+    caratteri:  \u201Cvolaana\u201D"

@@ -23,4 +23,7 @@ MonoBehaviour:
   - suggerimentTxt: Le prime due lettere della password sono "C" ed "I" e le ultime
       due sono "6" e "4"
     costo: 5
-  spiegazione: Masticazzi
+  spiegazione: "Che stupido! Usare informazioni personali per proteggere i propri
+    dati \xE8 una delle cose pi\xF9 sconsigliate che si possa fare. Se solo avesse
+    usato parole senza contesto, oppure, caratteri speciali posti qua e l\xE0, avrei
+    avuto molta pi\xF9 difficolt\xE0."
