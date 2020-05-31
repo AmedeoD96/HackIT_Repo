@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WordGameProva.unity
     guid: d9633c6c5f01ccd4694391fd3cdf3b14
+  - enabled: 1
+    path: Assets/Scenes/GraziePerAverGiocato.unity
+    guid: 492fc11edf93b8b4a86a07b5c4bfb87a
   m_configObjects: {}

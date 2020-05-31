@@ -2569,6 +2569,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3572069754380350328, guid: 4f674452acad03b41a82d646c7f2f065,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3572069754612977305, guid: 4f674452acad03b41a82d646c7f2f065,
         type: 3}
       propertyPath: m_CullTransparentMesh
@@ -2592,6 +2597,16 @@ PrefabInstance:
     - target: {fileID: 3572069754612977319, guid: 4f674452acad03b41a82d646c7f2f065,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572069754612977319, guid: 4f674452acad03b41a82d646c7f2f065,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572069754612977319, guid: 4f674452acad03b41a82d646c7f2f065,
+        type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572069754736194766, guid: 4f674452acad03b41a82d646c7f2f065,
@@ -2699,6 +2714,11 @@ PrefabInstance:
     - target: {fileID: 3572069755036036143, guid: 4f674452acad03b41a82d646c7f2f065,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572069755616536539, guid: 4f674452acad03b41a82d646c7f2f065,
+        type: 3}
+      propertyPath: m_Value
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
