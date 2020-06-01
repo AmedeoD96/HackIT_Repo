@@ -1457,8 +1457,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fa81ae2b981bd084ebf4cee098affd90, type: 2}
-  m_sharedMaterial: {fileID: 3594294928410054776, guid: fa81ae2b981bd084ebf4cee098affd90,
+  m_fontAsset: {fileID: 11400000, guid: c1b3d2874b1797f47b7455d41745013a, type: 2}
+  m_sharedMaterial: {fileID: -7433366527506823788, guid: c1b3d2874b1797f47b7455d41745013a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1531,7 +1531,7 @@ MonoBehaviour:
     spaceCount: 54
     wordCount: 54
     linkCount: 0
-    lineCount: 13
+    lineCount: 9
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
